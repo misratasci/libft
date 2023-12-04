@@ -1,34 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mitasci <mitasci@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/04 14:56:21 by mitasci           #+#    #+#             */
-/*   Updated: 2023/12/04 16:23:18 by mitasci          ###   ########.fr       */
+/*   Created: 2023/12/04 16:35:27 by mitasci           #+#    #+#             */
+/*   Updated: 2023/12/04 16:46:38 by mitasci          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*memmove(void *dst, const void *src, size_t len)
+static size_t	ft_strlen(const char *s)
 {
-	char	*d;
-	char	*temp;
-	size_t	i;
+	int	i;
 
-	d = dst;
-	temp = NULL;
 	i = 0;
-	while (i < len)
+	while (s[i])
 	{
-		temp[i] = ((char *)src)[i];
 		i += 1;
 	}
+	return (i);
+}
+
+size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
+{
+	size_t	i;
+	size_t	dstlen;
+
 	i = 0;
-	while (i < len)
+	dstlen = ft_strlen(dst);
+	while (i < dstsize - dstlen - 1)
 	{
-		d[i] = temp[i];
+		dst[dstlen - 1 + i] = src[i];
 		i += 1;
 	}
-	return (dst);
+	dst[dstlen - 1 + i] = 0;
+	i = 0;
+	return (ft_strlen(src) + ft_strlen(dst));
 }

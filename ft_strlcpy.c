@@ -1,34 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mitasci <mitasci@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/04 14:56:21 by mitasci           #+#    #+#             */
-/*   Updated: 2023/12/04 16:23:18 by mitasci          ###   ########.fr       */
+/*   Created: 2023/12/04 16:23:43 by mitasci           #+#    #+#             */
+/*   Updated: 2023/12/04 16:34:41 by mitasci          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*memmove(void *dst, const void *src, size_t len)
+size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
-	char	*d;
-	char	*temp;
 	size_t	i;
 
-	d = dst;
-	temp = NULL;
 	i = 0;
-	while (i < len)
+	while (i < dstsize - 1)
 	{
-		temp[i] = ((char *)src)[i];
+		dst[i] = src[i];
 		i += 1;
 	}
+	dst[i] = 0;
 	i = 0;
-	while (i < len)
+	while (src[i])
 	{
-		d[i] = temp[i];
 		i += 1;
 	}
-	return (dst);
+	return (i);
 }
