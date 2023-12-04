@@ -3,13 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mitasci <42istanbul.com.tr>                +#+  +:+       +#+        */
+/*   By: mitasci <mitasci@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 11:34:30 by mitasci           #+#    #+#             */
-/*   Updated: 2023/12/04 12:13:36 by mitasci          ###   ########.tr       */
+/*   Updated: 2023/12/04 17:02:10 by mitasci          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <ctype.h>
 int	ft_isprint(int c)
 {
 	return (c >= 32 && c <= 126);

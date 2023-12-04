@@ -6,10 +6,11 @@
 /*   By: mitasci <mitasci@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 16:23:43 by mitasci           #+#    #+#             */
-/*   Updated: 2023/12/04 16:34:41 by mitasci          ###   ########.fr       */
+/*   Updated: 2023/12/04 17:03:33 by mitasci          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <string.h>
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
 	size_t	i;

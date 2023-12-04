@@ -6,10 +6,11 @@
 /*   By: mitasci <mitasci@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 13:01:12 by mitasci           #+#    #+#             */
-/*   Updated: 2023/12/04 14:47:44 by mitasci          ###   ########.fr       */
+/*   Updated: 2023/12/04 17:00:24 by mitasci          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <strings.h>
 void	ft_bzero(void *s, size_t n)
 {
 	size_t	i;

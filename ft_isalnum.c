@@ -3,13 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mitasci <42istanbul.com.tr>                +#+  +:+       +#+        */
+/*   By: mitasci <mitasci@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 11:50:29 by mitasci           #+#    #+#             */
-/*   Updated: 2023/12/04 12:12:31 by mitasci          ###   ########.tr       */
+/*   Updated: 2023/12/04 17:00:43 by mitasci          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <ctype.h>
 int	ft_isalnum(int c)
 {
 	int	isdigit;

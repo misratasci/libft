@@ -6,10 +6,11 @@
 /*   By: mitasci <mitasci@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 14:56:21 by mitasci           #+#    #+#             */
-/*   Updated: 2023/12/04 16:23:18 by mitasci          ###   ########.fr       */
+/*   Updated: 2023/12/04 17:02:47 by mitasci          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <string.h>
 void	*memmove(void *dst, const void *src, size_t len)
 {
 	char	*d;

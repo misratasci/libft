@@ -3,13 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mitasci <42istanbul.com.tr>                +#+  +:+       +#+        */
+/*   By: mitasci <mitasci@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 12:20:20 by mitasci           #+#    #+#             */
-/*   Updated: 2023/12/04 12:25:09 by mitasci          ###   ########.tr       */
+/*   Updated: 2023/12/04 17:03:05 by mitasci          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <string.h>
 void	*ft_memset(void *b, int c, size_t len)
 {
 	size_t	i;
