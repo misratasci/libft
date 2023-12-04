@@ -1,25 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mitasci <mitasci@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/04 13:01:12 by mitasci           #+#    #+#             */
-/*   Updated: 2023/12/04 14:47:44 by mitasci          ###   ########.fr       */
+/*   Created: 2023/12/04 14:49:35 by mitasci           #+#    #+#             */
+/*   Updated: 2023/12/04 14:55:59 by mitasci          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_bzero(void *s, size_t n)
+void	*memcpy(void *dst, const void *src, size_t n)
 {
+	char	*d;
 	size_t	i;
-	char	*str;
 
+	d = dst;
 	i = 0;
-	str = s;
 	while (i < n)
 	{
-		str[i] = 0;
+		d[i] = ((char *)src)[i];
 		i += 1;
 	}
+	return (dst);
 }
