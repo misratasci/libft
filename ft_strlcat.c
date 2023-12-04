@@ -6,11 +6,12 @@
 /*   By: mitasci <mitasci@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 16:35:27 by mitasci           #+#    #+#             */
-/*   Updated: 2023/12/04 17:03:22 by mitasci          ###   ########.fr       */
+/*   Updated: 2023/12/04 17:09:03 by mitasci          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
+
 static size_t	ft_strlen(const char *s)
 {
 	size_t	i;

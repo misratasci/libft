@@ -1,27 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mitasci <mitasci@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/04 13:01:12 by mitasci           #+#    #+#             */
-/*   Updated: 2023/12/04 17:08:43 by mitasci          ###   ########.fr       */
+/*   Created: 2023/12/04 17:04:10 by mitasci           #+#    #+#             */
+/*   Updated: 2023/12/04 17:08:41 by mitasci          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <strings.h>
+#include <ctype.h>
 
-void	ft_bzero(void *s, size_t n)
+int	ft_toupper(int c)
 {
-	size_t	i;
-	char	*str;
-
-	i = 0;
-	str = s;
-	while (i < n)
+	if (c >= 97 && c <= 122)
 	{
-		str[i] = 0;
-		i += 1;
+		return (c - 32);
 	}
+	return (c);
 }
