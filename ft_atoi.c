@@ -6,17 +6,17 @@
 /*   By: mitasci <mitasci@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/07 11:38:10 by mitasci           #+#    #+#             */
-/*   Updated: 2023/12/07 11:52:42 by mitasci          ###   ########.fr       */
+/*   Updated: 2023/12/07 13:16:05 by mitasci          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 static int	ft_isdigit(int c)
 {
 	return (c >= 48 && c <= 57);
 }
-
+//boşluklar artı eksi işaretleri
 int	ft_atoi(const char *str)
 {
 	int	res;

@@ -6,11 +6,11 @@
 /*   By: mitasci <mitasci@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 14:49:35 by mitasci           #+#    #+#             */
-/*   Updated: 2023/12/07 11:50:48 by mitasci          ###   ########.fr       */
+/*   Updated: 2023/12/07 13:16:05 by mitasci          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h"
 
 void	*ft_memcpy(void *dst, const void *src, size_t n)
 {

@@ -6,11 +6,11 @@
 /*   By: mitasci <mitasci@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 14:56:21 by mitasci           #+#    #+#             */
-/*   Updated: 2023/12/07 11:50:52 by mitasci          ###   ########.fr       */
+/*   Updated: 2023/12/07 13:16:05 by mitasci          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h"
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
