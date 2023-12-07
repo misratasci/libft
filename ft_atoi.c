@@ -1,27 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mitasci <mitasci@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/04 13:01:12 by mitasci           #+#    #+#             */
-/*   Updated: 2023/12/07 11:50:55 by mitasci          ###   ########.fr       */
+/*   Created: 2023/12/07 11:38:10 by mitasci           #+#    #+#             */
+/*   Updated: 2023/12/07 11:52:42 by mitasci          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <strings.h>
+#include <stdlib.h>
 
-void	ft_bzero(void *s, size_t n)
+static int	ft_isdigit(int c)
 {
-	size_t	i;
-	char	*str;
+	return (c >= 48 && c <= 57);
+}
 
+int	ft_atoi(const char *str)
+{
+	int	res;
+	int	i;
+
+	res = 0;
 	i = 0;
-	str = s;
-	while (i < n)
+	while (str[i])
 	{
-		str[i] = 0;
+		if (!ft_isdigit(str[i]))
+			break ;
+		res *= 10;
+		res += str[i] - '0';
 		i += 1;
 	}
+	return (res);
 }
