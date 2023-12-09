@@ -14,14 +14,14 @@
 
 static int	is_whitespace(int c)
 {
-	return (c == ' ' || c == '\n' || c == '\t' || c == '\r' ||c == '\v' || c == '\f');
+	return (c == ' ' || c == '\n' || c == '\t' || c == '\r' || c == '\v' || c == '\f');
 }
 
 static int	ft_isdig(int c)
 {
 	return (c >= 48 && c <= 57);
 }
-//boşluklar artı eksi işaretleri
+
 int	ft_atoi(const char *str)
 {
 	int	res;

@@ -24,5 +24,5 @@ char	*ft_strdup(const char *s)
 		str[i] = s[i];
 		i += 1;
 	}
-	return str;
+	return (str);
 }
