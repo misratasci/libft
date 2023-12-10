@@ -25,6 +25,59 @@ static size_t	strlength(const char *s)
 	return (i);
 }
 
+char	*strdupl(const char *s)
+{
+	char	*str;
+	size_t	i;
+
+	str = (char *)malloc(sizeof(s));
+	i = 0;
+	while (s[i])
+	{
+		str[i] = s[i];
+		i += 1;
+	}
+	return (str);
+}
+
+static int	in_set(char c, const char *set)
+{
+	size_t	i;
+
+	i = 0;
+	while (i < sizeof(set))
+	{
+		if (c == set[i])
+			return (1);
+		i += 1;
+	}
+	return (0);
+}
+
+char	*trim(char const *s1, char const *set)
+{
+	char	*str;
+	size_t	start;
+	size_t	end;
+	size_t	i;
+
+	str = (char *)malloc(strlength(s1));
+	start = 0;
+	while (in_set(s1[start], set))
+		start += 1;
+	end = strlength(s1) - 1;
+	while (in_set(s1[end], set))
+		end -= 1;
+	i = 0;
+	while (i < end - start + 1)
+	{
+		str[i] = s1[start + i];
+		i += 1;
+	}
+	str[i] = 0;
+	return (str);
+}
+
 char	**ft_split(char const *s, char c)
 {
 	char	**arr;
@@ -32,36 +85,45 @@ char	**ft_split(char const *s, char c)
 	size_t	j;
 	size_t	word_count;
 	char	*str;
+	char	*trimmed;
 
+	*(&c+1) = 0;
+	trimmed = trim(s, &c);
 	i = 0;
 	j = 0;
 	word_count = 0;
-	arr = (char **)malloc(strlength(s));
-	while(i < strlength(s))
+	arr = (char **)malloc(strlength(trimmed));
+	str = (char *)malloc(strlength(trimmed));
+	while(i <= strlength(trimmed))
 	{
-		str = (char *)malloc(strlength(s));
-		if (s[i] != c)
+		if (trimmed[i] != c && trimmed[i] != 0)
 		{
-			str[j] = s[i];
+			str[j] = trimmed[i];
 			j += 1;
 		}
 		else
 		{
+			if (trimmed[i+1] == c)
+			{
+				i += 1;
+				continue ;
+			}
 			str[j] = 0;
-			arr[word_count] = str;
-			free(str);
+			arr[word_count] = strdupl(str);
+			word_count += 1;
 			j = 0;
 		}
 		i += 1;
 	}
-	arr[i] = 0;
+	arr[word_count] = 0;
+	free(str);
 	return (arr);
 }
 
 int main()
 {
 	char	**a = (char **)malloc(50);
-	a = ft_split("kdfakdfakdfaakmfda", 'a');
+	a = ft_split("---abc-def--ghij-", '-');
 	int	i = 0;
 	while (a[i])
 	{
