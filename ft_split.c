@@ -86,29 +86,22 @@ char	**ft_split(char const *s, char c)
 	size_t	j;
 	size_t	word_count;
 	char	*str;
-	char	*trimmed;
 
-	*(&c + 1) = 0;
-	trimmed = trim(s, &c);
+	s = trim(s, &c);
 	i = 0;
 	j = 0;
 	word_count = 0;
-	arr = (char **)malloc(strlength(trimmed));
-	str = (char *)malloc(strlength(trimmed));
-	while (i <= strlength(trimmed))
+	arr = (char **)malloc(strlength(s));
+	str = (char *)malloc(strlength(s));
+	while (i <= strlength(s))
 	{
-		if (trimmed[i] != c && trimmed[i] != 0)
+		if (s[i] != c && s[i] != 0)
 		{
-			str[j] = trimmed[i];
+			str[j] = s[i];
 			j += 1;
 		}
-		else
+		else if (s[i + 1] != c)
 		{
-			if (trimmed[i + 1] == c)
-			{
-				i += 1;
-				continue ;
-			}
 			str[j] = 0;
 			arr[word_count] = strdupl(str);
 			word_count += 1;
@@ -119,4 +112,16 @@ char	**ft_split(char const *s, char c)
 	arr[word_count] = 0;
 	free(str);
 	return (arr);
+}
+
+int main()
+{
+	char 	*s = "--sdf-fghfg---sdf---sdgv--";
+	int	i = 0;
+	char	**a = ft_split(s, '-');
+	while (a[i])
+	{
+		printf("%s, ", a[i]);
+		i += 1;
+	}
 }
