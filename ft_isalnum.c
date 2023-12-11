@@ -6,7 +6,7 @@
 /*   By: mitasci <mitasci@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 11:50:29 by mitasci           #+#    #+#             */
-/*   Updated: 2023/12/07 13:16:05 by mitasci          ###   ########.fr       */
+/*   Updated: 2023/12/11 16:05:30 by mitasci          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	ft_isalnum(int c)
 	int	isdigit;
 	int	isalpha;
 
-	isdigit = (c >= 48 && c <= 57);
-	isalpha = (c >= 65 && c <= 122);
+	isdigit = (c >= '0' && c <= '9');
+	isalpha = ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'));
 	return (isdigit || isalpha);
 }
