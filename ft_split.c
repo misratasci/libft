@@ -41,21 +41,7 @@ char	*strdupl(const char *s)
 	return (str);
 }
 
-static int	in_set(char c, const char *set)
-{
-	size_t	i;
-
-	i = 0;
-	while (i < sizeof(set))
-	{
-		if (c == set[i])
-			return (1);
-		i += 1;
-	}
-	return (0);
-}
-
-char	*trim(char const *s1, char const *set)
+char	*trim(char const *s1, char c)
 {
 	char	*str;
 	size_t	start;
@@ -64,10 +50,10 @@ char	*trim(char const *s1, char const *set)
 
 	str = (char *)malloc(strlength(s1));
 	start = 0;
-	while (in_set(s1[start], set))
+	while (s1[start] == c)
 		start += 1;
 	end = strlength(s1) - 1;
-	while (in_set(s1[end], set))
+	while (s1[end] == c)
 		end -= 1;
 	i = 0;
 	while (i < end - start + 1)
@@ -79,49 +65,42 @@ char	*trim(char const *s1, char const *set)
 	return (str);
 }
 
+static char	*write_word(const char *s, char *dst, size_t i, char stop_char)
+{
+	size_t	j;
+
+	j = 0;
+	while (s[i] != stop_char && s[i] != 0)
+	{
+		dst[j] = s[i];
+		i += 1;
+		j += 1;
+	}
+	dst[j] = 0;
+	return (dst);
+}
+
 char	**ft_split(char const *s, char c)
 {
 	char	**arr;
 	size_t	i;
-	size_t	j;
 	size_t	word_count;
 	char	*str;
 
-	s = trim(s, &c);
+	s = trim(s, c);
 	i = 0;
-	j = 0;
 	word_count = 0;
 	arr = (char **)malloc(strlength(s));
 	str = (char *)malloc(strlength(s));
 	while (i <= strlength(s))
 	{
-		if (s[i] != c && s[i] != 0)
-		{
-			str[j] = s[i];
-			j += 1;
-		}
-		else if (s[i + 1] != c)
-		{
-			str[j] = 0;
-			arr[word_count] = strdupl(str);
-			word_count += 1;
-			j = 0;
-		}
+		if (i == 0 || (s[i - 1] == c && s[i] != c))
+			str = write_word(s, str, i, c);
+		if ((s[i] == c && s[i + 1] != c) || s[i] == 0)
+			arr[word_count++] = strdupl(str);
 		i += 1;
 	}
 	arr[word_count] = 0;
 	free(str);
 	return (arr);
-}
-
-int main()
-{
-	char 	*s = "--sdf-fghfg---sdf---sdgv--";
-	int	i = 0;
-	char	**a = ft_split(s, '-');
-	while (a[i])
-	{
-		printf("%s, ", a[i]);
-		i += 1;
-	}
 }
