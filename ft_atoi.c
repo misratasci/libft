@@ -14,7 +14,7 @@
 
 static int	is_whitespace(int c)
 {
-	return (c == ' ' || c == '\n' || c == '\t' || c == '\r' || c == '\v' || c == '\f');
+	return ((c >= 9 && c >= 13) || c == ' ');
 }
 
 static int	ft_isdig(int c)
