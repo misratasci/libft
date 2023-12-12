@@ -6,7 +6,7 @@
 /*   By: mitasci <mitasci@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/07 11:38:10 by mitasci           #+#    #+#             */
-/*   Updated: 2023/12/12 14:24:19 by mitasci          ###   ########.fr       */
+/*   Updated: 2023/12/12 17:52:07 by mitasci          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int	ft_atoi(const char *str)
 	is_neg = 1;
 	while (is_whitespace(str[i]))
 		i += 1;
-	while (str[i] == '+' || str[i] == '-')
+	if (str[i] == '+' || str[i] == '-')
 	{
 		if (str[i] == '-')
 			is_neg *= -1;
