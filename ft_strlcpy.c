@@ -6,7 +6,7 @@
 /*   By: mitasci <mitasci@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 16:23:43 by mitasci           #+#    #+#             */
-/*   Updated: 2023/12/07 13:16:05 by mitasci          ###   ########.fr       */
+/*   Updated: 2023/12/12 15:02:13 by mitasci          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,13 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 	size_t	i;
 
 	i = 0;
-	while (i < dstsize - 1)
+	while (i < dstsize - 1 && src[i] && dstsize != 0)
 	{
 		dst[i] = src[i];
 		i += 1;
 	}
-	dst[i] = 0;
+	if (dstsize != 0)
+		dst[i] = 0;
 	i = 0;
 	while (src[i])
 	{

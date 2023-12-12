@@ -6,7 +6,7 @@
 /*   By: mitasci <mitasci@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/07 11:38:10 by mitasci           #+#    #+#             */
-/*   Updated: 2023/12/07 13:16:05 by mitasci          ###   ########.fr       */
+/*   Updated: 2023/12/12 14:24:19 by mitasci          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static int	is_whitespace(int c)
 {
-	return ((c >= 9 && c >= 13) || c == ' ');
+	return ((c >= 9 && c <= 13) || c == ' ');
 }
 
 static int	ft_isdig(int c)

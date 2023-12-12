@@ -6,7 +6,7 @@
 /*   By: mitasci <mitasci@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 16:35:27 by mitasci           #+#    #+#             */
-/*   Updated: 2023/12/11 15:31:32 by mitasci          ###   ########.fr       */
+/*   Updated: 2023/12/12 15:10:43 by mitasci          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,12 +31,12 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 
 	i = 0;
 	dstlen = strlength(dst);
-	while (i < dstsize - dstlen - 1)
+	while (i < dstsize - dstlen - 1 && src[i] && dstsize != 0)
 	{
 		dst[dstlen + i] = src[i];
 		i += 1;
 	}
-	dst[dstlen + i] = 0;
-	i = 0;
-	return (strlength(src) + strlength(dst));
+	if (dstsize != 0 && dstlen < dstsize)
+		dst[dstlen + i] = 0;
+	return (dstlen + strlength(src));
 }
