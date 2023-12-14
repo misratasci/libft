@@ -6,7 +6,7 @@
 /*   By: mitasci <mitasci@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/09 18:09:25 by mitasci           #+#    #+#             */
-/*   Updated: 2023/12/14 12:55:26 by mitasci          ###   ########.fr       */
+/*   Updated: 2023/12/14 13:24:17 by mitasci          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,7 @@ static size_t	strlength(const char *s)
 
 	i = 0;
 	while (s[i])
-	{
 		i += 1;
-	}
 	return (i);
 }
 
@@ -29,7 +27,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	char	*str;
 	size_t	i;
 
-	str = (char *)malloc(strlength(s1) + strlength(s2));
+	str = (char *)malloc(strlength(s1) + strlength(s2) + 1);
 	i = 0;
 	while (i < strlength(s1))
 	{
