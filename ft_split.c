@@ -6,12 +6,11 @@
 /*   By: mitasci <mitasci@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/09 21:21:34 by mitasci           #+#    #+#             */
-/*   Updated: 2023/12/14 17:21:29 by mitasci          ###   ########.fr       */
+/*   Updated: 2023/12/14 17:59:48 by mitasci          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 static size_t	count_words(const char *s, char c)
 {
