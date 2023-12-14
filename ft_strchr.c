@@ -6,7 +6,7 @@
 /*   By: mitasci <mitasci@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 17:10:59 by mitasci           #+#    #+#             */
-/*   Updated: 2023/12/11 15:30:15 by mitasci          ###   ########.fr       */
+/*   Updated: 2023/12/14 19:23:33 by mitasci          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,7 @@ static size_t	strlength(const char *s)
 
 	i = 0;
 	while (s[i])
-	{
 		i += 1;
-	}
 	return (i);
 }
 
@@ -30,6 +28,7 @@ char	*ft_strchr(const char *s, int c)
 	int	slen;
 
 	i = 0;
+	c = c % 256;
 	slen = strlength(s);
 	while (i <= slen)
 	{

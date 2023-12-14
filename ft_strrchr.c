@@ -6,7 +6,7 @@
 /*   By: mitasci <mitasci@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 17:19:17 by mitasci           #+#    #+#             */
-/*   Updated: 2023/12/11 15:31:00 by mitasci          ###   ########.fr       */
+/*   Updated: 2023/12/14 19:28:16 by mitasci          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ char	*ft_strrchr(const char *s, int c)
 {
 	int	slen;
 
+	c = c % 256;
 	slen = strlength(s);
 	s += slen;
 	while (slen >= 0)
