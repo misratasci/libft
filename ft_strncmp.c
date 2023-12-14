@@ -6,7 +6,7 @@
 /*   By: mitasci <mitasci@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 17:23:03 by mitasci           #+#    #+#             */
-/*   Updated: 2023/12/12 16:26:31 by mitasci          ###   ########.fr       */
+/*   Updated: 2023/12/14 19:44:30 by mitasci          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,3 +38,7 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	}
 	return (0);
 }
+/*
+your strncmp doesn't stop at \0
+[fail]: your strncmp does not work with non ascii chars
+*/

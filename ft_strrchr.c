@@ -6,7 +6,7 @@
 /*   By: mitasci <mitasci@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 17:19:17 by mitasci           #+#    #+#             */
-/*   Updated: 2023/12/14 19:34:57 by mitasci          ###   ########.fr       */
+/*   Updated: 2023/12/14 19:44:10 by mitasci          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,7 @@ static size_t	strlength(const char *s)
 
 	i = 0;
 	while (s[i])
-	{
 		i += 1;
-	}
 	return (i);
 }
 
@@ -28,7 +26,6 @@ char	*ft_strrchr(const char *s, int c)
 {
 	size_t	slen;
 
-	c = c % 256;
 	slen = strlength(s);
 	s += slen;
 	while (slen >= 0)
@@ -42,3 +39,8 @@ char	*ft_strrchr(const char *s, int c)
 	}
 	return (NULL);
 }
+/*
+your strrchr does not work with unicode
+[fail]: your strrchr does not work with empty string
+[crash]: your strrchr crash because it read too many bytes or attempt to write on s !
+*/

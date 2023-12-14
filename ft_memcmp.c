@@ -6,7 +6,7 @@
 /*   By: mitasci <mitasci@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 17:49:51 by mitasci           #+#    #+#             */
-/*   Updated: 2023/12/12 16:28:39 by mitasci          ###   ########.fr       */
+/*   Updated: 2023/12/14 19:44:37 by mitasci          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,3 +38,9 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	}
 	return (0);
 }
+/*
+your memcmp does not work with basic input
+[fail]: your memcmp does not cast the memory in unsigned char
+[fail]: your memcmp stop at \0
+[fail]: your memcmp does not work with basic input
+*/
