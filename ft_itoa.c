@@ -6,65 +6,70 @@
 /*   By: mitasci <mitasci@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 11:13:13 by mitasci           #+#    #+#             */
-/*   Updated: 2023/12/11 11:13:13 by mitasci          ###   ########.fr       */
+/*   Updated: 2023/12/14 18:44:30 by mitasci          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static size_t	strlength(const char *s)
+static size_t	char_count(int n)
 {
 	size_t	i;
 
-	i = 0;
-	while (s[i])
+	i = 1;
+	if (n < 0)
+		return (char_count(-n) + 1);
+	while (n > 9)
 	{
-		i += 1;
+		n /= 10;
+		i++;
 	}
 	return (i);
 }
 
-char	*join(char const *s1, char const *s2)
+static char	*handle_negmaxnum(int n)
 {
-	char	*str;
-	size_t	i;
+	char	*s;
+	size_t	len;
 
-	str = (char *)malloc(strlength(s1) + strlength(s2));
-	i = 0;
-	while (i < strlength(s1))
+	len = 11;
+	s = (char *)malloc(12);
+	s[0] = '-';
+	s[1] = '2';
+	while (n > 0)
 	{
-		str[i] = s1[i];
-		i += 1;
+		s[len - 1] = n % 10 + '0';
+		n /= 10;
+		len--;
 	}
-	i = 0;
-	while (i < strlength(s2))
-	{
-		str[strlength(s1) + i] = s2[i];
-		i += 1;
-	}
-	str[strlength(s1) + i] = 0;
-	return (str);
+	s[11] = 0;
+	return (s);
 }
 
 char	*ft_itoa(int n)
 {
-	char	*s;
-	size_t	i;
+	char	*str;
+	size_t	len;
+	size_t	org_len;
 
-	s = (char *)malloc(10);
-	i = 0;
-	if (n < 0)
+	if (n == -2147483648)
+		return (handle_negmaxnum(147483648));
+	len = char_count(n);
+	org_len = len;
+	str = (char *)malloc(len + 1);
+	if (n == 0)
+		str[0] = '0';
+	else if (n < 0)
 	{
-		s[i++] = '-';
-		s[i] = 0;
-		return (join(s, ft_itoa(-n)));
+		str[0] = '-';
+		n *= -1;
 	}
-	else if (n >= 10)
-		return (join(ft_itoa(n / 10), ft_itoa(n % 10)));
-	else
+	while (n > 0)
 	{
-		s[i++] = n + '0';
-		s[i] = 0;
-		return (s);
+		str[len - 1] = n % 10 + '0';
+		n /= 10;
+		len--;
 	}
+	str[org_len] = 0;
+	return (str);
 }
