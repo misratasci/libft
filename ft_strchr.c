@@ -6,7 +6,7 @@
 /*   By: mitasci <mitasci@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 17:10:59 by mitasci           #+#    #+#             */
-/*   Updated: 2023/12/14 19:23:33 by mitasci          ###   ########.fr       */
+/*   Updated: 2023/12/14 19:34:43 by mitasci          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@ static size_t	strlength(const char *s)
 
 char	*ft_strchr(const char *s, int c)
 {
-	int	i;
-	int	slen;
+	size_t	i;
+	size_t	slen;
 
 	i = 0;
 	c = c % 256;
