@@ -6,7 +6,7 @@
 /*   By: mitasci <mitasci@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/07 11:53:16 by mitasci           #+#    #+#             */
-/*   Updated: 2023/12/14 11:40:32 by mitasci          ###   ########.fr       */
+/*   Updated: 2023/12/14 12:54:15 by mitasci          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,8 @@ void	*ft_calloc(size_t count, size_t size)
 	i = 0;
 	while (i < size * count)
 	{
-		*ptr = 0;
+		ptr[i] = 0;
 		i += 1;
-		ptr += 1;
 	}
 	return ((void *)ptr);
 }
