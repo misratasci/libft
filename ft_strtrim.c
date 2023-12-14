@@ -6,26 +6,11 @@
 /*   By: mitasci <mitasci@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/09 18:16:28 by mitasci           #+#    #+#             */
-/*   Updated: 2023/12/14 13:47:19 by mitasci          ###   ########.fr       */
+/*   Updated: 2023/12/14 15:24:38 by mitasci          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
-
-static int	in_set(char c, const char *set)
-{
-	size_t	i;
-
-	i = 0;
-	while (i < sizeof(set))
-	{
-		if (c == set[i])
-			return (1);
-		i += 1;
-	}
-	return (0);
-}
 
 static size_t	strlength(const char *s)
 {
@@ -39,6 +24,20 @@ static size_t	strlength(const char *s)
 	return (i);
 }
 
+static int	in_set(char c, const char *set)
+{
+	size_t	i;
+
+	i = 0;
+	while (i < strlength(set))
+	{
+		if (c == set[i])
+			return (1);
+		i += 1;
+	}
+	return (0);
+}
+
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	char	*str;
@@ -46,17 +45,18 @@ char	*ft_strtrim(char const *s1, char const *set)
 	size_t	end;
 	size_t	i;
 
-	str = (char *)malloc(strlength(s1) + 1);
 	start = 0;
-	while (s1[start] && in_set(s1[start], set))
+	while (in_set(s1[start], set))
 		start += 1;
-	end = 0;
-	if (s1[0])
-		end = strlength(s1) - 1;
+	end = strlength(s1) - 1;
 	while (in_set(s1[end], set) && end > 0)
 		end -= 1;
+	if (end >= start)
+		str = (char *)malloc(end - start + 2);
+	else
+		str = (char *)malloc(1);
 	i = 0;
-	while (i < end - start + 1 && end > start)
+	while (i < end - start + 1 && end >= start)
 	{
 		str[i] = s1[start + i];
 		i += 1;
