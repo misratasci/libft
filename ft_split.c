@@ -6,11 +6,12 @@
 /*   By: mitasci <mitasci@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/09 21:21:34 by mitasci           #+#    #+#             */
-/*   Updated: 2023/12/14 17:59:48 by mitasci          ###   ########.fr       */
+/*   Updated: 2023/12/22 13:33:21 by mitasci          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
 static size_t	count_words(const char *s, char c)
 {
@@ -53,6 +54,8 @@ static char	*write_word(const char *s, char c)
 	size_t	i;
 
 	str = (char *)malloc(count_letters(s, c) + 1);
+	if (!str)
+		return (NULL);
 	i = 0;
 	while (s[i] != c && s[i] != '\0')
 	{
@@ -70,17 +73,29 @@ char	**ft_split(char const *s, char c)
 	size_t	word;
 
 	arr = (char **)malloc((count_words(s, c) + 1) * sizeof(char *));
+	if (!arr)
+		return (NULL);
 	i = 0;
 	word = 0;
 	while (s[i])
 	{
 		if (s[i] != c && (i == 0 || s[i - 1] == c))
-		{
-			arr[word] = write_word(s + i, c);
-			word++;
-		}
+			arr[word++] = write_word(s + i, c);
 		i++;
 	}
 	arr[word] = 0;
 	return (arr);
 }
+/*
+int main()
+{
+	char *s = "      split       this for   me  !       ";
+	char **result = ft_split(s, ' ');
+	int i = 0;
+	while (result[i])
+	{
+		printf("%s\n", result[i]);
+		i++;
+	}
+}
+*/
