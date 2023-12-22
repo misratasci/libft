@@ -11,22 +11,20 @@ SRCS = \
 	ft_itoa.c ft_strmapi.c ft_striteri.c ft_putchar_fd.c ft_putstr_fd.c \
 	ft_putendl_fd.c ft_putnbr_fd.c
 OBJS = $(SRCS:.c=.o)
-.PHONY = all clean fclean re
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	ar -rcs $@ $(OBJS)
-
-%.o: %.c
-	$(CC) -c $(CFLAGS) -o $@ $<
+	ar -rcs $(NAME) $(OBJS)
 
 clean:
 	rm -rf $(OBJS)
 
-fclean:
-	rm -rf $(OBJS) $(NAME)
+fclean: clean
+	rm -rf $(NAME)
 
 re:
 	fclean
 	all
+
+.PHONY = all clean fclean re
