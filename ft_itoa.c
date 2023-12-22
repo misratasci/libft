@@ -6,7 +6,7 @@
 /*   By: mitasci <mitasci@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 11:13:13 by mitasci           #+#    #+#             */
-/*   Updated: 2023/12/22 14:02:53 by mitasci          ###   ########.fr       */
+/*   Updated: 2023/12/22 14:13:29 by mitasci          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,9 +70,8 @@ char	*ft_itoa(int n)
 	}
 	while (n > 0)
 	{
-		str[len - 1] = n % 10 + '0';
+		str[len-- - 1] = n % 10 + '0';
 		n /= 10;
-		len--;
 	}
 	str[org_len] = 0;
 	return (str);
