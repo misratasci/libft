@@ -6,11 +6,12 @@
 /*   By: mitasci <mitasci@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 17:19:17 by mitasci           #+#    #+#             */
-/*   Updated: 2023/12/14 19:44:10 by mitasci          ###   ########.fr       */
+/*   Updated: 2023/12/22 12:10:49 by mitasci          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
 static size_t	strlength(const char *s)
 {
@@ -24,23 +25,19 @@ static size_t	strlength(const char *s)
 
 char	*ft_strrchr(const char *s, int c)
 {
+	char	*str;
 	size_t	slen;
 
+	c = c % 256;
 	slen = strlength(s);
-	s += slen;
-	while (slen >= 0)
+	str = (char *)s;
+	str += slen;
+	while (slen >= 0 && slen <= strlength(s))
 	{
-		if (*s == c)
-		{
-			return ((char *)s);
-		}
+		if (*str == c)
+			return (str);
 		slen -= 1;
-		s -= 1;
+		str -= 1;
 	}
 	return (NULL);
 }
-/*
-your strrchr does not work with unicode
-[fail]: your strrchr does not work with empty string
-[crash]: your strrchr crash because it read too many bytes or attempt to write on s !
-*/
