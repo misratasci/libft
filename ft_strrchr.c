@@ -6,12 +6,11 @@
 /*   By: mitasci <mitasci@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 17:19:17 by mitasci           #+#    #+#             */
-/*   Updated: 2023/12/22 12:10:49 by mitasci          ###   ########.fr       */
+/*   Updated: 2023/12/22 14:00:07 by mitasci          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 static size_t	strlength(const char *s)
 {

@@ -6,7 +6,7 @@
 /*   By: mitasci <mitasci@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 11:13:13 by mitasci           #+#    #+#             */
-/*   Updated: 2023/12/14 18:44:30 by mitasci          ###   ########.fr       */
+/*   Updated: 2023/12/22 14:02:53 by mitasci          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,8 @@ static char	*handle_negmaxnum(int n)
 
 	len = 11;
 	s = (char *)malloc(12);
+	if (!s)
+		return (NULL);
 	s[0] = '-';
 	s[1] = '2';
 	while (n > 0)
@@ -57,6 +59,8 @@ char	*ft_itoa(int n)
 	len = char_count(n);
 	org_len = len;
 	str = (char *)malloc(len + 1);
+	if (!str)
+		return (NULL);
 	if (n == 0)
 		str[0] = '0';
 	else if (n < 0)

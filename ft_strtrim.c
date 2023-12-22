@@ -6,7 +6,7 @@
 /*   By: mitasci <mitasci@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/09 18:16:28 by mitasci           #+#    #+#             */
-/*   Updated: 2023/12/14 15:24:38 by mitasci          ###   ########.fr       */
+/*   Updated: 2023/12/22 14:00:49 by mitasci          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,7 @@ static size_t	strlength(const char *s)
 
 	i = 0;
 	while (s[i])
-	{
 		i += 1;
-	}
 	return (i);
 }
 
@@ -55,6 +53,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 		str = (char *)malloc(end - start + 2);
 	else
 		str = (char *)malloc(1);
+	if (!str)
+		return (0);
 	i = 0;
 	while (i < end - start + 1 && end >= start)
 	{

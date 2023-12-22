@@ -6,7 +6,7 @@
 /*   By: mitasci <mitasci@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 12:47:15 by mitasci           #+#    #+#             */
-/*   Updated: 2023/12/14 17:55:08 by mitasci          ###   ########.fr       */
+/*   Updated: 2023/12/22 13:59:52 by mitasci          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	unsigned int	i;
 
 	str = (char *)malloc(strlength(s) + 1);
+	if (!str)
+		return (NULL);
 	i = 0;
 	while (s[i])
 	{
